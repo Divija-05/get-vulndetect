@@ -1,0 +1,30 @@
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignore virtual environment folder
+venv/
+
+# Ignore logs and temporary files
+logs/
+*.log
+*.out
+*.tmp
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore environment variable files
+.env
+
+# Ignore model files if you don’t want to track them
+src/models/
+
+# Ignore data files (if you don’t want raw/processed data tracked)
+data/raw/
+data/processed/
