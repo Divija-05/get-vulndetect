@@ -22,9 +22,4 @@ Thumbs.db
 # Ignore environment variable files
 .env
 
-# Ignore model files if you don’t want to track them
-src/models/
 
-# Ignore data files (if you don’t want raw/processed data tracked)
-data/raw/
-data/processed/
