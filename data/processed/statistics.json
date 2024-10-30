@@ -1,0 +1,18 @@
+{
+  "total_contracts": 122,
+  "vulnerability_distribution": {
+    "access_control": 18,
+    "arithmetic": 15,
+    "denial_of_service": 6,
+    "reentrancy": 31,
+    "unchecked_low_level_calls": 52
+  },
+  "multi_label_distribution": {
+    "0": 0,
+    "1": 122,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0
+  }
+}
