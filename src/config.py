@@ -2,6 +2,8 @@ import torch
 
 class Config:
     # Data settings
+    NUM_EDGE_TYPES = 3
+    SAMPLE_SIZES = [25, 10, 5]
     DATA_ROOT = 'data/'
     BATCH_SIZE = 32
     NUM_WORKERS = 4
