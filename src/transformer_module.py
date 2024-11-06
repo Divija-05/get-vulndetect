@@ -1,3 +1,4 @@
+# src/transformer_module.py
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -10,7 +11,7 @@ class SmartContractTransformer(nn.Module):
         self,
         hidden_dim: int = 256,
         num_layers: int = 4,
-        num_heads: int = 4,
+        num_heads: int = 1,
         dropout: float = 0.1,
         max_length: int = 512
     ):

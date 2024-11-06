@@ -1,3 +1,5 @@
+# src/config.py
+
 import torch
 
 class Config:
