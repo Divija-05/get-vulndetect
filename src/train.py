@@ -227,7 +227,7 @@ def train(
 
 if __name__ == '__main__':
     import os
-    from torch.utils.data import DataLoader
+    from torch.utils.loader import DataLoader
     from .data_processing import SmartContractDataset  # Assuming dataset.py contains your SmartContractDataset class
     
     # Load config
