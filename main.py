@@ -4,7 +4,7 @@ import argparse
 import logging
 import torch
 from pathlib import Path
-from torch.utils.data import DataLoader
+from torch_geometric.data import DataLoader
 from src.config import Config
 from src._init_ import setup_training, save_checkpoint, setup_logging
 from src.data_processing import SmartContractDataset

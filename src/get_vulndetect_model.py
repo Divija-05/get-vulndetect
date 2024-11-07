@@ -28,7 +28,7 @@ class GETVulnDetect(nn.Module):
         use_hierarchical: bool = True,
         gnn_sample_sizes: List[int] = [25, 10, 5]
     ):
-        print(f"output_dim: {output_dim}, num_heads: {num_heads}")
+        #print(f"output_dim: {output_dim}, num_heads: {num_heads}")
         assert output_dim % num_heads == 0, "output_dim must be divisible by num_heads"
 
         super().__init__()

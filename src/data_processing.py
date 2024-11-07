@@ -64,11 +64,16 @@ class SmartContractDataset(Dataset):
                     
                     # Group vulnerabilities by category
                     vulns_by_category = {}
+
                     for vuln in contract['vulnerabilities']:
                         category = vuln['category']
+                        if vuln['lines'] and category in self.vulnerability_categories:
+                            vulns_by_category[category] = vuln['lines']
+                        '''
                         if category not in vulns_by_category:
                             vulns_by_category[category] = []
                         vulns_by_category[category].extend(vuln['lines'])
+                        '''
 
                     all_contracts[contract_id] = {
                         'name': contract['name'],

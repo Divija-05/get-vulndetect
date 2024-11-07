@@ -103,7 +103,7 @@ def evaluate(
     total_loss = 0
     predictions_list = []
     targets_list = []
-    
+
     for batch in val_loader:
         # Unpack batch data
         x = batch.x.to(device)
@@ -255,6 +255,6 @@ if __name__ == '__main__':
         num_workers=config.NUM_WORKERS if hasattr(config, 'NUM_WORKERS') else 4,
         pin_memory=True if torch.cuda.is_available() else False
     )
-    
+
     # Train model
     model = train(config, train_loader, val_loader)
