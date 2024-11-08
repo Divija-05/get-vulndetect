@@ -1,6 +1,6 @@
 # src/data_processing.py
 import torch
-from torch_geometric.loader import Dataset, Data
+from torch_geometric.data import Dataset, Data
 import os
 import json
 from pathlib import Path

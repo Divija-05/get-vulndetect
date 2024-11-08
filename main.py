@@ -1,5 +1,4 @@
 # main.py
-
 import argparse
 import logging
 import torch
@@ -26,7 +25,7 @@ def load_datasets(config):
     dataset = SmartContractDataset(root=config.DATA_ROOT)
     train_data = torch.load(Path(config.DATA_ROOT) / 'processed' / 'train.pt')
     val_data = torch.load(Path(config.DATA_ROOT) / 'processed' / 'val.pt')
-
+    
     train_loader = DataLoader(
         train_data,
         batch_size=config.BATCH_SIZE,
@@ -34,7 +33,7 @@ def load_datasets(config):
         num_workers=config.NUM_WORKERS,
         pin_memory=torch.cuda.is_available()
     )
-
+    
     val_loader = DataLoader(
         val_data,
         batch_size=config.BATCH_SIZE,
@@ -42,44 +41,47 @@ def load_datasets(config):
         num_workers=config.NUM_WORKERS,
         pin_memory=torch.cuda.is_available()
     )
-
+    
     return train_loader, val_loader
 
 def main():
     args = parse_arguments()
-
+    
     # Load configuration
     config = Config()
     if args.config:
         # Load custom configurations here if needed
         pass
+    
     if args.batch_size:
         config.BATCH_SIZE = args.batch_size
     if args.epochs:
         config.NUM_EPOCHS = args.epochs
-
+    
     # Setup logging
     setup_logging(config)
-
+    
     # Load datasets
     train_loader, val_loader = load_datasets(config)
-
+    
     if args.train:
         logging.info("Starting training...")
         model = train(config, train_loader, val_loader, checkpoint_path=args.resume)
         logging.info("Training completed successfully.")
-
+    
     if args.evaluate:
         # Setup model, optimizer, and device (for evaluation only)
-        model, _, device, _, _ = setup_training(config, checkpoint_path=args.resume)
+        training_setup = setup_training(config, checkpoint_path=args.resume)
+        model, optimizer, device = training_setup[0], training_setup[1], training_setup[2]
+        
         criterion = torch.nn.BCEWithLogitsLoss()
-
         logging.info("Evaluating the model on validation data...")
         val_loss, val_metrics = evaluate(model, val_loader, criterion, device)
+        
         logging.info(f"Validation Loss: {val_loss:.4f}")
         logging.info(f"Validation Metrics: Precision: {val_metrics['precision']:.4f}, "
-                     f"Recall: {val_metrics['recall']:.4f}, F1: {val_metrics['f1']:.4f}, "
-                     f"AUC: {val_metrics['auc']:.4f}")
+                    f"Recall: {val_metrics['recall']:.4f}, F1: {val_metrics['f1']:.4f}, "
+                    f"AUC: {val_metrics['auc']:.4f}")
 
 if __name__ == '__main__':
     main()

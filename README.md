@@ -3,7 +3,9 @@ Here's the entire `README.md` in one code block:
 ```markdown
 # GET-VulnDetect: Graph-Enhanced Transformer for Smart Contract Vulnerability Detection
 
-GET-VulnDetect is an advanced tool that leverages both Graph Neural Networks (GNNs) and transformer-based models to detect vulnerabilities in smart contracts. This approach combines the structural properties of smart contracts with the sequential nature of code execution to provide high accuracy in vulnerability detection.
+GET-VulnDetect is an advanced tool that leverages both Graph Neural Networks (GNNs) and transformer-based models to detect vulnerabilities in 
+smart contracts. This approach combines the structural properties of smart contracts with the sequential nature
+of code execution to provide high accuracy in vulnerability detection.
 
 ## Project Structure
 
@@ -74,4 +76,4 @@ Feel free to contribute to GET-VulnDetect by opening a pull request. Ensure all 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 ```
 
-Let me know if you need further customization!
+

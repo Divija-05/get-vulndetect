@@ -3,7 +3,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from typing import Dict, Optional, Tuple
-import numpy as np
 
 class EnhancedFusionLayer(nn.Module):
     """
