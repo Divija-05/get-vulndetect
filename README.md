@@ -1,4 +1,3 @@
-Here's the entire `README.md` in one code block:
 
 ```markdown
 # GET-VulnDetect: Graph-Enhanced Transformer for Smart Contract Vulnerability Detection
